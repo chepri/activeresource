@@ -120,8 +120,9 @@ module ActiveResource
         "#{self.class.prefix(prefix_options)}#{self.class.collection_name}/#{id}/#{method_name}#{self.class.format_extension}#{self.class.__send__(:query_string, options)}"
       end
 
+      #removing new, as we don't need this
       def custom_method_new_element_url(method_name, options = {})
-        "#{self.class.prefix(prefix_options)}#{self.class.collection_name}/new/#{method_name}#{self.class.format_extension}#{self.class.__send__(:query_string, options)}"
+        "#{self.class.prefix(prefix_options)}#{self.class.collection_name}/#{method_name}#{self.class.format_extension}#{self.class.__send__(:query_string, options)}"
       end
   end
 end
